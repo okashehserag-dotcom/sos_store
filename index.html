@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#E7D9C4" />
+  <meta name="description" content="SOS STORE" />
+  <title>SOS STORE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">تخطي للمحتوى</a>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="SOS STORE">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__title">SOS STORE</span>
+          <span class="brand__sub">Luxury • Minimal • Mobile First</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="القائمة">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggleLine"></span>
+          <span class="nav__toggleLine"></span>
+          <span class="nav__toggleLine"></span>
+        </button>
+
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link" href="#sections">الأقسام</a>
+          <a class="nav__link" href="#reviews">التقييمات</a>
+          <a class="nav__link" href="#contact">تواصل</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__card">
+          <div class="hero__eyebrow">واجهة فاخرة جاهزة للتعبئة</div>
+          <h1 class="hero__title">متجر بسيط وأنيق بتجربة موبايل قوية</h1>
+          <p class="hero__desc">٤ أقسام، داخل كل قسم سلايدر ١٠ منتجات + بحث + فلترة + لايك مرة واحدة لكل زائر.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#sections">استكشف الأقسام</a>
+            <a class="btn btn--ghost" href="#contact">تواصل</a>
+          </div>
+        </div>
+
+        <div class="hero__tiles" aria-hidden="true">
+          <div class="tile tile--a"></div>
+          <div class="tile tile--b"></div>
+          <div class="tile tile--c"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sections" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">الأقسام</h2>
+          <p class="section__sub">افتح أي قسم لعرض السلايدر والبحث والفلترة.</p>
+        </div>
+
+        <div class="grid" id="sectionsGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Reviews & Feedback</h2>
+          <p class="section__sub">التقييمات محفوظة محليًا على جهاز الزائر.</p>
+        </div>
+
+        <div class="reviews">
+          <form class="card card--pad" id="reviewForm" autocomplete="off">
+            <div class="card__head">
+              <div>
+                <div class="card__title">أضف تقييم</div>
+                <div class="card__sub">سيظهر على هذا الجهاز فقط</div>
+              </div>
+              <button class="btn btn--ghost btn--sm" type="button" id="clearReviews">مسح</button>
+            </div>
+
+            <div class="field">
+              <label for="reviewName">الاسم</label>
+              <input id="reviewName" maxlength="30" required />
+            </div>
+
+            <div class="field">
+              <label for="reviewRating">التقييم</label>
+              <select id="reviewRating" required>
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4)</option>
+                <option value="3">★★★☆☆ (3)</option>
+                <option value="2">★★☆☆☆ (2)</option>
+                <option value="1">★☆☆☆☆ (1)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="reviewText">التعليق</label>
+              <textarea id="reviewText" rows="4" maxlength="220" required></textarea>
+              <div class="hint"><span id="reviewCount">0</span>/220</div>
+            </div>
+
+            <button class="btn btn--primary" type="submit">إرسال</button>
+          </form>
+
+          <div class="card card--pad">
+            <div class="card__head">
+              <div>
+                <div class="card__title">آخر التقييمات</div>
+                <div class="card__sub">حتى 12 تقييم ظاهر</div>
+              </div>
+            </div>
+            <div class="reviews__list" id="reviewsList" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact card card--pad">
+          <div class="section__head section__head--tight">
+            <h2 class="section__title">تواصل</h2>
+            <p class="section__sub">تحويل مباشر إلى إنستقرام</p>
+          </div>
+          <a class="btn btn--primary" target="_blank" rel="noopener" href="https://instagram.com/sos_sstorre">@sos_sstorre</a>
+          <div class="muted">يفتح في تبويب جديد</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>© <span id="year"></span> SOS STORE</div>
+        <a class="nav__link" href="#top">أعلى</a>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
